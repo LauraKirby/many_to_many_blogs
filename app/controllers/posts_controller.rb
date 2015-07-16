@@ -9,6 +9,12 @@ class PostsController < ApplicationController
   end
 
   def create 
+  	@post = Post.create(posts_params)
+  	if @post.save
+  		redirect_to posts_path, notice: 'Post has been saved'
+  	else 
+  		render :new
+  	end 
   end 
 
   def show
@@ -24,3 +30,10 @@ class PostsController < ApplicationController
   end
 
 end
+
+
+private
+
+ def posts_params
+		params.require(:post).permit(:title, :content, :author)
+ end
