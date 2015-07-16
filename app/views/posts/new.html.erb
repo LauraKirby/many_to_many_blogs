@@ -1,27 +1,2 @@
 <h1>New Post</h1>
-<%= form_for(@post, html:{class:"form-horizontal", role:"form"}) do |f| %>
-	<div class="form-group">
-		<%= f.label :title, class:"col-md-2"  %>
-		<div class="col-sm-7">
-			<%= f.text_field :title, class:"form-control", placeholder: "title" %>
-		</div>
-	</div>
-
-	<div class="form-group">
-		<%= f.label :content, class:"col-md-2"  %>
-		<div class="col-sm-7">
-			<%= f.text_field :content, class:"form-control", placeholder:"share your thoughts" %>
-		</div>
-	</div>
-
-	<div class="form-group">
-		<%= f.label :author, class:"col-md-2"  %>
-		<div class="col-sm-7">
-			<%= f.text_field :author, class:"form-control", placeholder:"who wrote this masterpiece?" %>
-		</div>
-	</div>
-	<div>
-		<%= f.submit class:"btn btn-primary" %>
-	</div>
-	
-<% end %>
+<%= render partial: 'form' %>
