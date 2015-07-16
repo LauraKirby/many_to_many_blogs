@@ -20,5 +20,5 @@ p3.tags << t3
 Post.create({
 	title: "Learning 101", 
 	content: "Take a deep breath and relax",
-	author: "Elie"
+	author: "Colt"
 	})
