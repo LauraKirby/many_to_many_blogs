@@ -10,7 +10,7 @@ class PostsController < ApplicationController
   end
 
   def create 
-  	@post = Post.create(posts_params)
+  	@post = Post.create(post_params)
   	if @post.save
   		redirect_to posts_path, notice: 'Post has been saved'
   	else 
@@ -25,6 +25,12 @@ class PostsController < ApplicationController
   end
 
   def update
+    @post.update post_params
+    if @post.save 
+      redirect_to posts_path 
+    else 
+      render :edit
+    end 
   end 
 
   def delete
@@ -34,7 +40,7 @@ class PostsController < ApplicationController
 
 private
 
-  def posts_params
+  def post_params
     params.require(:post).permit(:title, :content, :author)
   end
 
