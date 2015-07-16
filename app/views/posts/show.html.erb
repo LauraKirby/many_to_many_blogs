@@ -1,2 +1,11 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<h1>Show Post</h1>
+<h1 class="page-header"><%= @post.title %></h1>
+
+<div class="row">
+ <div class="caption col-sm-6 col-md-4 pull-right">
+       <h3><%= @post.title %></h3>
+       <h5>Content:<%= @post.content  %></h5>
+       <h5>Author:<%= @post.author %></h5>
+ </div>
+</div>
+
